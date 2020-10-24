@@ -12,7 +12,6 @@
 .container {
   width: 100vw;
   height: 92vh;
-  background-color: aquamarine;
   display: grid;
 }
 
@@ -20,7 +19,6 @@
   display: flex;
   align-items: flex-end;
   margin: auto;
-  background-color: blueviolet;
   width: 95%;
   height: 95%;
 }
@@ -33,4 +31,8 @@
 
 .margin {
   margin-right: 5px;
+}
+
+.yellow{
+  background-color: yellow;
 }

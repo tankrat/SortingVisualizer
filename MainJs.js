@@ -1,4 +1,4 @@
-var maxIndex = 100;
+var maxIndex = 10;
 var widthIndex = 0;
 var widthContainer = 0;
 
@@ -10,7 +10,9 @@ $(document).ready(function () {
 
 function printArray() {
   for (var i = 1; i <= maxIndex; i++) {
-    let randomHeight = randomInteger(1, 100) + "." + randomInteger(1, 99);
+    let a = randomInteger(1, 100);
+    let b = randomInteger(1, 99);
+    let randomHeight = a != 100 ? a + "." + b : a;
     if (i == maxIndex) {
       let div =
         "<div id='" +
@@ -39,20 +41,37 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function orderArray() {
+async function orderArray() {
   for (var i = 1; i <= maxIndex; i++) {
     for (var j = 1; j <= maxIndex; j++) {
       div1 = $("#" + j);
       j2 = j + 1;
       div2 = $("#" + j2);
+      div1.addClass("yellow");
+      div2.addClass("yellow");
+      await sleep(1000);
+      div1.removeClass("yellow");
+      div2.removeClass("yellow");
       if (div1.height() > div2.height()) {
-        tdiv1 = div1.clone();
-        tdiv2 = div2.clone();
-        div1.replaceWith(tdiv2);
-        div2.replaceWith(tdiv1);
-        $("#" + j).attr("id", j2);
-        $("#" + j2).attr("id", j);
+        swap(div1, div2, j, j2);
       }
     }
   }
+}
+
+function swap(div1, div2, j, j2) {
+  tdiv1 = div1.clone();
+  tdiv2 = div2.clone();
+  div1.replaceWith(tdiv2);
+  div2.replaceWith(tdiv1);
+  if (j2 == maxIndex) {
+    $("#" + j2).addClass("margin");
+    $("#" + j).removeClass("margin");
+  }
+  $("#" + j).attr("id", j2);
+  $("#" + j2).attr("id", j);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
