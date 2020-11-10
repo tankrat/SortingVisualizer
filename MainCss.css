@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.navbar > button{
+  margin-right: 1%;
+}
+
 .container {
   width: 100vw;
   height: 92vh;
@@ -35,4 +39,12 @@
 
 .yellow{
   background-color: yellow;
+}
+
+.red{
+  background-color: red;
+}
+
+.green{
+  background-color: green;
 }
