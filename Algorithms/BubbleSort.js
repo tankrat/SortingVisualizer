@@ -13,14 +13,14 @@ async function bubbleSort() {
         div1.addClass("red");
         div2.addClass("red");
         await sleep(ms);
-        swap(array[j], array[j + 1], j);
+        swap(array[j], array[j - 1], j);
         $("#" + array[j].id).removeClass("red");
-        $("#" + array[j + 1].id).removeClass("red");
+        $("#" + array[j - 1].id).removeClass("red");
         $("#" + array[j].id).addClass("green");
-        $("#" + array[j + 1].id).addClass("green");
+        $("#" + array[j - 1].id).addClass("green");
         await sleep(ms);
         $("#" + array[j].id).removeClass("green");
-        $("#" + array[j + 1].id).removeClass("green");
+        $("#" + array[j - 1].id).removeClass("green");
       } else {
         div1.addClass("green");
         div2.addClass("green");
@@ -30,4 +30,5 @@ async function bubbleSort() {
       }
     }
   }
+  console.log(array);
 }

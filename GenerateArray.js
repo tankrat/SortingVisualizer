@@ -1,5 +1,5 @@
 function generateArray() {
-  for (var i = 1; i <= maxIndex; i++) {
+  for (var i = 0; i < maxIndex; i++) {
     let a = randomInteger(1, 100);
     let b = randomInteger(1, 99);
     let randomHeight = a != 100 ? a + "." + b : a;

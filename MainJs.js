@@ -2,7 +2,7 @@ var maxIndex = 5;
 var widthIndex = 0;
 var widthContainer = 0;
 var array = [];
-var ms = 1;
+var ms = 1000;
 
 $(document).ready(function () {
   widthContainer = $(".array-box").width() - 5;
