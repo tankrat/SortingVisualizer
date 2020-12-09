@@ -27,4 +27,5 @@ function generateArray() {
       $(".array-box").append(div);
     }
   }
+  console.log(array);
 }
