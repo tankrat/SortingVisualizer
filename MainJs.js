@@ -1,4 +1,4 @@
-var maxIndex = 100;
+var maxIndex = 10;
 var widthIndex = 0;
 var widthContainer = 0;
 var array = [];
